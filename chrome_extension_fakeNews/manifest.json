@@ -1,0 +1,39 @@
+
+{
+    "manifest_version": 2,
+  
+    "name": "FakeNewsTool Extension",
+    "description": "Extension to classify your news.",
+    "version": "1.0",
+    
+  
+    "browser_action": {
+     "default_icon": "images/fake-news.png",
+     "default_popup": "popup.html"
+    },
+    "permissions": [
+        "identity",
+        "tabs",
+        "storage",
+     "activeTab",
+     "http://*/*",
+    "https://*/*",
+    "https://www.google.com/*",
+    "http://www.google.com/*",
+    "https://www.unslanted.net/*"
+    
+     ],
+    // Adding https://www.gstatic.com/ to the external scripts authorized domains so we can import the firebase JS SDK and access the Realtime Database as well as Firebase Storage.
+  "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com https://apis.google.com/ https://tagmanager.google.com/ https://www.googletagmanager.com/; object-src 'self' ",
+  "oauth2": {
+    // TODO(DEVELOPER): Change the line below to the OAuth Client ID you created as described in https://developer.chrome.com/apps/app_identity#google
+    "client_id": "645693015780-6v6rtufjlkhleovfjo8qtcnob3tn9lf9.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+  // TODO(DEVELOPER): Change the line below to your Chrome Extension's public key as described in https://developer.chrome.com/apps/app_identity#google
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxbx65PshLBtio+T2JUHN3SRPU5J62jepGYK7rdgWNFqSdyXMFvcY971XoZrja14kpOXHTw2Mr7qXjWq78HC6lbSJ20IEVrj0KNaDuk2pITPiUtxR0IJs/6gKwCARgJMgoJ6+15Gy94sgVbfbuBtB73BdddynuhaMNRvoulwu0/aySM4Tuu9FyOS/cLmHLfW3r93m9jWTUYyd+GNHwX4hChQRNm6V6Lb8NsqYrB4yZyXlV9tapnDYHnsS+bTpDTRAgyC/1HlDLoVg2ZZIrfOE6//2qQRHAk1C2FW1wtWFSd+QWVqzx1Vsb5UqcsyT6RRmia9Ou2grFstcuXk+zhs4JwIDAQAB"
+  }
+
